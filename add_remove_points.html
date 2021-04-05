@@ -57,7 +57,9 @@
 				'click',
 				function (ev) {
 					mymap.closePopup();
-					theMarker.addLayer(L.marker(e.latlng)).addTo(mymap);
+					var marker = L.marker(e.latlng);
+					marker.bindPopup(e.latlng.toString());
+					theMarker.addLayer(marker).addTo(mymap);
 				},
 			);
 		}
